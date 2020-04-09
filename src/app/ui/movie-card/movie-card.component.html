@@ -1,0 +1,8 @@
+<div class="c-box-style movie-card" [ngStyle]="{'background': 'url(' + movie?.image + ') no-repeat top'}">
+    <div class="layer">
+        <div class="movie-card__data">
+            <h3>{{movie?.name}}</h3>
+            <app-rating [rating]="movie?.stars / 2"></app-rating>
+        </div>
+    </div>
+</div>

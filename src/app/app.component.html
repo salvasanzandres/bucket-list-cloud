@@ -1,0 +1,20 @@
+<app-header></app-header>
+<main>
+    <aside class="sidebar" [style.width.px]="(displayNavigation$ | async) ? 250 : 0">
+        <div class="close-icon">
+            <app-close (clickEvent)="closeMenu()"></app-close>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><h3>My Movies</h3></li>
+                <li *ngIf="isUserSignedInAsObs$ | async" ><h3>Welcome</h3></li>
+                <li *ngIf="isUserSignedInAsObs$ | async" (click)="logout()" ><h3>logout</h3></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="router-wrapper">
+        <router-outlet></router-outlet>
+    </div>
+</main>
+<app-snackbar></app-snackbar>
+

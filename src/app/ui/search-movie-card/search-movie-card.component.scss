@@ -1,0 +1,33 @@
+@import "../../../global.scss";
+
+:host {
+    max-height: 50rem;
+    .search-movie-card {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        app-close, h2 {
+            padding: $padding-reference;
+        }
+        > div {
+            padding: $padding-reference;
+            flex-basis: 100%;
+        }
+        .movie-result {
+            display: flex;
+            justify-content: flex-start;
+            cursor: pointer;
+            padding: $padding-reference 0;
+            img {
+                max-height: 25rem;
+            }
+            .movie-result__data {
+                padding: 0 $padding-reference;
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,12 @@
+* {
+    color: black;
+}
+.ratings {
+    display: flex;
+    flex-direction: row;
+    .star {
+        svg {
+            width: 2.5rem;
+        }
+    }
+}

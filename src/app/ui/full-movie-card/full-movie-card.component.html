@@ -1,0 +1,22 @@
+<div class="c-box-style card-wrapper">
+    <app-close (clickEvent)="closeFullMovieWindow()"></app-close>
+    <div class="full-movie-card">
+        <div class="full-movie-card__data">
+            <h2>{{movieDetails.name}}</h2>
+            <h3>{{movieDetails.year}} - {{movieDetails.genre}} {{movieDetails.runtime}}</h3>
+            <p>Staring : {{movieDetails.actors}}</p>
+            <p>Plot: {{movieDetails.description}}</p>
+        </div>
+        <div [ngStyle]="{'background-image': 'url(' + movieDetails.image + ')'}" style="background-size: cover">
+            <div class="full-movie-card__image">
+                <div class="actions">
+                    <div><app-edit-button></app-edit-button></div>
+                    <div><app-remove (click)="removeMovie(movieDetails)"></app-remove></div>
+                    <div><app-share></app-share></div>
+                    <div><app-like [like]="movieDetails.like"  (click)="saveLike(!movieDetails.like)"></app-like></div>
+                </div>
+                <app-rating [rating]="movieDetails.stars / 2"></app-rating>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+@import "../../../global.scss";
+:host {
+    padding: 0 1rem;
+    .card-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0;
+        app-close {
+            padding: $padding-reference;
+        }
+        .full-movie-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            .full-movie-card__data {
+                padding: 0 $padding-reference $padding-reference $padding-reference;
+            }
+            .full-movie-card__image {
+                display: flex;
+                justify-content: space-between;
+                min-height: 50rem;
+                .actions {
+                    display: flex;
+                    flex-direction: column;
+                    padding: $padding-reference;
+                    >* {
+                        cursor: pointer;
+                    }
+                }
+                app-rating {
+                    padding: $padding-reference;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@import "../../../global.scss";
+
+.login-box {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    .login-box__form-section {
+        width: 30rem;
+        padding: $padding-reference;
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        > * {
+            margin: 10px 0px;
+        }
+    }
+    .login-box__desc-section {
+        max-width: 40rem;
+        min-height: 25rem;
+        color: white;
+        padding: $padding-reference;
+        background-image: url('../../../assets/img/login-blue.jpg');
+        background-size: cover;
+    }
+    img {
+        max-width: 25rem;
+    }
+}
+
+@media(max-width: 800px) {
+    .login-box {
+        flex-flow: column nowrap;
+        .description-section {
+            flex-flow: column nowrap;
+        }
+    }
+}
+
+.background-opacity {
+    background: rgba(0, 0, 0, 0.3);
+}

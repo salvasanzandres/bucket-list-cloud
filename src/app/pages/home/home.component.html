@@ -1,0 +1,15 @@
+<div class="c-modal-wrapper" *ngIf="isSearchMovie" [class.modal-open]="isSearchMovie">
+    <app-search-movie-card (closeSearchWindowEvent)="isSearchMovie = !isSearchMovie"></app-search-movie-card>
+</div>
+<div class="c-modal-wrapper" *ngIf="movieDetails" [class.modal-open]="movieDetails">
+    <app-full-movie-card [movieDetails]="movieDetails" (closeMovieCardEvent)="resetMovieDetails()"></app-full-movie-card>
+</div>
+
+
+<div class="home-wrapper">
+    <app-new-movie-card (click)="openSearchMovieCard()"></app-new-movie-card>
+
+    <app-movie-card *ngFor="let movie of movies$ | async" [movie]="movie"
+                    (click)="movieDetails = movie" ></app-movie-card>
+</div>
+

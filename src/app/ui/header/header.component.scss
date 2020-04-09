@@ -1,0 +1,28 @@
+@import "../../../global.scss";
+
+.header-wrapper {
+    padding: 20px 0px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    .menu-button {
+        cursor: pointer;
+        img {
+            width: 6rem;
+        }
+    }
+    .logo-wrapper {
+        padding: 0px 60px ;
+        display: flex;
+        img {
+            width: 5rem;
+        }
+    }
+    @media(max-width: 768px) {
+        .logo-wrapper {
+            padding: 0px 20px ;
+        }
+    }
+}
+

@@ -1,0 +1,12 @@
+:host {
+    // width: 100%;
+    .home-wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        @media(max-width: 768px) {
+            justify-content: center;
+        }
+    }
+
+}

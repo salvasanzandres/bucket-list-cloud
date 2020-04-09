@@ -1,0 +1,3 @@
+<div class="snackbar" [class.show]="(snackBarServiceSubscription | async)?.message">
+    {{(snackBarServiceSubscription | async)?.message}}
+</div>
