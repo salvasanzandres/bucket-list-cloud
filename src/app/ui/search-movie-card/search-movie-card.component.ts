@@ -21,7 +21,7 @@ export class SearchMovieCardComponent implements OnInit, OnDestroy {
     searchStatus: SEARCH_STATUS = SEARCH_STATUS.init;
     searchStatusList = SEARCH_STATUS;
     imageCoverJoker = '../../../assets/img/background/movie-placeholder.jpg';
-    loadImageError = false;
+    loadImageError: boolean[] = [];
     private unsubscribe: Subject<void> = new Subject();
 
 
@@ -39,14 +39,14 @@ export class SearchMovieCardComponent implements OnInit, OnDestroy {
         this.searchFormGroup.get('name').valueChanges.pipe(
             tap(name => {
                 this.searchStatus = SEARCH_STATUS.pending;
-                this.loadImageError = false;
+                this.loadImageError = [];
             }),
             debounceTime(1000),
             takeUntil(this.unsubscribe),
             skipWhile(name => name.length < 5),
             switchMap(name => this.movieService.getMovies(name))
         ).subscribe(response => {
-            this.result = response.splice(0, 5);
+            this.result = response.splice(0, 8);
             console.log(this.result)
             this.searchStatus = SEARCH_STATUS.loaded;
         });
@@ -74,7 +74,7 @@ export class SearchMovieCardComponent implements OnInit, OnDestroy {
         this.searchFormGroup.get('name').setValue('', {emitEvent: false});
         this.searchStatus = SEARCH_STATUS.init;
         this.result = null;
-        this.loadImageError = false;
+        this.loadImageError = [];
     }
 
     ngOnDestroy() {

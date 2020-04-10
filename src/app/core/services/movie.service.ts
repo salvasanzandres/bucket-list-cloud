@@ -12,7 +12,7 @@ import {environment} from '../../../environments/environment';
 })
 export class MovieService {
     private apiKey = environment.omdbApiKey;
-    private omdbApiUrl = 'http://www.omdbapi.com/';
+    private omdbApiUrl = 'https://www.omdbapi.com/';
 
     constructor(private http: HttpClient) {
     }

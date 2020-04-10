@@ -10,9 +10,9 @@
             <ng-container [ngSwitch]="searchStatus">
                 <div *ngSwitchCase="searchStatusList.pending">....</div>
                 <ng-container *ngSwitchCase="searchStatusList.loaded">
-                    <div *ngFor="let element of result;" class="movie-result" (click)="addMovie(element)">
-                        <img [attr.src]="!loadImageError ? element.image : imageCoverJoker"
-                             (error)="loadImageError = true"/>
+                    <div *ngFor="let element of result; let i = index" class="movie-result" (click)="addMovie(element)">
+                        <img [attr.src]="!loadImageError[i] ? element.image : imageCoverJoker"
+                             (error)="loadImageError[i] = true"/>
                         <div class="movie-result__data">
                             <h3>{{element.name}}</h3>
                             <p>{{element.year}}</p>

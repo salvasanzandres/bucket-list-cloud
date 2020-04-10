@@ -20,8 +20,15 @@
             justify-content: flex-start;
             cursor: pointer;
             padding: $padding-reference 0;
+
             img {
                 max-height: 25rem;
+            }
+            @media(max-width: 768px) {
+                img {
+                    max-height: 15rem;
+                    max-width: 20rem;
+                }
             }
             .movie-result__data {
                 padding: 0 $padding-reference;

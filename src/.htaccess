@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301]
+   RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+   RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+   RewriteCond %{REQUEST_URI} !^/api/.*$
+   RewriteRule ^ - [L]
+
+   RewriteCond %{REQUEST_URI} !^/api/.*$
+   RewriteRule ^ /index.html [L]
